@@ -16,7 +16,9 @@ varsP.points=select(dom,'tbody tr');
 
 for(var i=0;i<varsP.data.length;i++){
   var nameData=varsP.title[i].children[0].data;
-  nameData=nameData.replace(/\s/g,'');
+  nameData=nameData.replace(/\s{2,}/g,'');
+   // nameData=nameData.replace(/\s/g,'');
+
   arrP.push({
     image:varsP.image[i].attribs.src,
     href:varsP.title[i].attribs.href,
