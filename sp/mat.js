@@ -33,7 +33,7 @@ var handler = new htmlparser.DefaultHandler(function(err, dom) {
        playerTwo:inArray[12],
          });
         }
-        for(var i=0;i<dataNeu2.length;i++){
+        for(var i=0;i<dataNeu2.length-1;i++){
           arrM.push({
           data:InsideInArrayM[i]
           });
