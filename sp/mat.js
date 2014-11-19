@@ -23,9 +23,9 @@ var handler = new htmlparser.DefaultHandler(function(err, dom) {
         for(var i=0;i<dataNeu2.length;i++){
        var inArray=eval("[" + dataNeu2[i] + "]");
        var pRrsult=inArray[9];
-       pRrsult=pRrsult.replace("&nbsp;:&nbsp;",":");
+      // pRrsult=pRrsult.replace("&nbsp;:&nbsp;",":");
        var pTime=inArray[4];
-       pTime=pTime.replace("^~$f","");
+       //pTime=pTime.replace("^~$f","");
        InsideInArrayM.push({
        link:inArray[1],
        date:inArray[2],
