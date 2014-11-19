@@ -22,13 +22,15 @@ var handler = new htmlparser.DefaultHandler(function(err, dom) {
         dataNeu2=dataNeu2.split(');');
         for(var i=0;i<dataNeu2.length;i++){
        var inArray=eval("[" + dataNeu2[i] + "]");
+       var pRrsult=inArray[9].replace("&nbsp;:&nbsp;",":");
+       var pTime=inArray[4].replace("^~$f","");
        InsideInArrayM.push({
        link:inArray[1],
        date:inArray[2],
        time:inArray[4],
        playerOneLink:inArray[5],
        playerOne:inArray[7],
-       playerResult:inArray[9],
+       playerResult:pRrsult,
        playerTwoLink:inArray[10],
        playerTwo:inArray[12],
          });
