@@ -1,5 +1,17 @@
 var varsM={}; var arrM = [];
 var InsideInArrayM=[];
+function timeConverter(UNIX_timestamp){
+var a = new Date(UNIX_timestamp*1000);
+var months = ['يناير','فبراير','مارس','ابريل','مايو','يونيو','يوليو','اغسطس','سبتمبر','اكتوبر','نوفمبر','ديسمبر'];
+var year = a.getFullYear();
+var month = months[a.getMonth()];
+var date = a.getDate();
+var hour = a.getHours();
+var min = a.getMinutes();
+var sec = a.getSeconds();
+var time = date + ' - ' + month + ' - ' + year ;
+return time;
+}
 //http://www.kooora.com/?c=5910&stage=1&sch=true
 function priM(link){
 var xhr = Titanium.Network.createHTTPClient();
@@ -22,13 +34,20 @@ var handler = new htmlparser.DefaultHandler(function(err, dom) {
         dataNeu2=dataNeu2.split(');');
         for(var i=0;i<dataNeu2.length;i++){
        var inArray=eval("[" + dataNeu2[i] + "]");
+       var dateUnix=inArray[2];
+       dateUnix=dateUnix.replace("#","");
+       var a = new Date(dateUnix*1000);
+       var hour = a.getHours();
+       var min = a.getMinutes();
        var pRrsult=inArray[9];
       // pRrsult=pRrsult.replace("&nbsp;:&nbsp;",":");
        var pTime=inArray[4];
        //pTime=pTime.replace("^~$f","");
        InsideInArrayM.push({
        link:inArray[1],
-       date:inArray[2],
+       date:timeConverter(dateUnix),
+       hour:hour,
+       min:min,
        time:pTime,
        playerOneLink:inArray[5],
        playerOne:inArray[7],
