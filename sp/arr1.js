@@ -7,6 +7,6 @@ var arrBold = [
 {
 "title":"كأس ملك أسبانيا",
 "href":"http://www.kooora.com/?c=10817&cm=m",
-"image":"hhttp://www.hibasport.com/upload/17102014-f0cdc.jpg"
+"image":"http://www.hibasport.com/upload/17102014-f0cdc.jpg"
 },
 ];
