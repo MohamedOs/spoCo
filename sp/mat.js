@@ -42,10 +42,7 @@ var handler = new htmlparser.DefaultHandler(function(err, dom) {
        var pRrsult=inArray[9];
       // pRrsult=pRrsult.replace("&nbsp;:&nbsp;",":");
        var pTime=inArray[4];
-       pTime=pTime.replace(/\$/g,"");
-       pTime=pTime.replace(/\~/g,"");
-       pTime=pTime.replace(/\^/g,"");
-       pTime=pTime.replace(/f/g,"");
+       pTime=pTime.replace("f","");
        //pTime=pTime.replace("^~$f","");
        InsideInArrayM.push({
        link:inArray[1],
