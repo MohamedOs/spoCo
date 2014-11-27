@@ -23,7 +23,12 @@ var handler = new htmlparser.DefaultHandler(function(err, dom) {
         alert('Error: ' + err);
     } else {
         varsM.data=select(dom,'script'); 
-        var dataNeu2=varsM.data[7].children[0].data+varsM.data[8].children[0].data;
+        var dataNeu2;
+for(var i=0;i<varsM.data.length;i++){
+if(varsM.data[i].children){
+dataNeu2+=varsM.data[i].children[0].data;
+}
+}
         dataNeu2=dataNeu2.split('var lang = 0;')[1];
         dataNeu2=dataNeu2.split('mfooter("");')[0];
         dataNeu2=dataNeu2.slice(2, -2);
