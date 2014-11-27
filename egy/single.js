@@ -10,7 +10,12 @@ if (err) {
 alert('Error: ' + err);
 } else {
 varsS1.data=select(dom,'script');
-var dataSingle=varsS1.data[7].children[0].data+varsS1.data[8].children[0].data;
+ var dataSingle;
+for(var i=0;i<varsS1.data.length;i++){
+if(varsS1.data[i].children){
+dataSingle+=varsS1.data[i].children[0].data;
+}
+}
 var dataSingleImage=dataSingle.split('var article_images = new Array (')[1];
 dataSingleImage=dataSingleImage.split('"");')[0];
 dataSingleImage=dataSingleImage.slice(3, -7);
