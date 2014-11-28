@@ -21,7 +21,12 @@ if (err) {
 alert('Error: ' + err);
 } else {
 vars.data=select(dom,'script');
-var dataNeu=vars.data[7].children[0].data+vars.data[8].children[0].data;
+var dataNeu;
+for(var i=0;i<vars.data.length;i++){
+if(vars.data[i].children){
+dataNeu+=vars.data[i].children[0].data;
+}
+}
 dataNeu=dataNeu.split('var news = new Array')[1];
 dataNeu=dataNeu.split(');')[0];
 dataNeu=dataNeu.slice(4, -6);
